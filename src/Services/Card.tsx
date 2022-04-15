@@ -7,9 +7,9 @@ interface Props {
 const Card: React.FC<Props> = ({ serviceName }) => {
   
   return (
-    <div className="flex flex-col max-w-xs">
+    <div className="flex flex-col max-w-[200px]">
       <Image className="object-cover" height={200} width={200} src="https://via.placeholder.com/200" alt="servicio de tarot" />
-      <h4 className="text-xl font-semibold my-2 text-gray-500 text-center">{serviceName}</h4>
+      <h4 className="text-xl font-semibold my-2 text-gray-500 text-center h-16">{serviceName}</h4>
     </div>
   )
 }
