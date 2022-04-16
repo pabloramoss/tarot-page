@@ -7,15 +7,17 @@ import Navbar from '../src/Navbar'
 import Footer from '../src/Footer'
 import api from '../src/api'
 import { HeroInfo, ServiceInfo } from '../src/types'
-
+import dbConnect from "../lib/dbConnect"
+import Herodb from "../models/Herodb"
+import Servicesdb from '../models/Servicesdb'
 interface Props {
   heroInfo: HeroInfo;
   services: ServiceInfo[];
   }
 
 const Home: NextPage<Props> = ({ heroInfo, services }) => {
-  console.log(heroInfo)
-  console.log(services)
+  console.log("Este es el hero info",heroInfo)
+  console.log("Este es el services",services)
 
   return (
     <div>
@@ -37,13 +39,30 @@ const Home: NextPage<Props> = ({ heroInfo, services }) => {
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
-  const heroInfo = await api.list()
-/*   const services = await api.services() */
+  await dbConnect()
+
+   /* find all the data in our database */
+/*   const result = await Herodb.find({})
+  const heroInfo = result.map((doc) => {
+    const hero = doc.toObject()
+    hero._id = hero._id.toString()
+    return hero
+  }) */
+  const result = await Servicesdb.find({})
+  const services = result.map((doc) => {
+    const service = doc.toObject()
+    service._id = service._id.toString()
+    return service
+  })
+  const heroInfo = {
+    title: "horoscopo maya",
+    image: "https://www.aliciagalvan.com/wp-content/uploads/2019/05/su_signo_segun_el_horoscopo_maya_1_joya_life-1600x400.jpg"
+  }
 
   return {
     props: {
       heroInfo,
-/*       services, */
+      services,
     },
   };
 };
