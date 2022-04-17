@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
   return (
     <div className="py-8 text-slate-300">
       <h5 id="contacto" className="font-semibold text-4xl mb-4 text-center">CONTACTAME</h5>
-      <div className=" gap-10 justify-center flex flex-col md:flex-row">
+      <div className="items-center gap-10 justify-center flex flex-col md:flex-row">
         <div className="pt-4">
           <p className="mb-2">Nombre</p>
           <input 
@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
           </div>
           <Link href={`https://wa.me/1414141?text=${encodeURIComponent(message)}`}>
             <a>
-              <button className="bg-green-400 text-black font-semibold flex items-center px-4 py-2 rounded-md gap-2 w-40 justify-center my-4"><FaWhatsapp width={8} height={8} />Enviar</button>
+              <button className="bg-green-400 text-black font-semibold flex items-center px-4 py-2 rounded-md w-40 justify-center my-4"><FaWhatsapp className="mx-2" size="20" />Enviar</button>
             </a>
           </Link>
         </div>
