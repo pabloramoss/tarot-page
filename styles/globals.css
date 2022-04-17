@@ -24,3 +24,7 @@ a {
   background-size: cover;
   overflow: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}
