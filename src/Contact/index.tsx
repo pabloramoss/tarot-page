@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
           <p className="mb-2">Nombre</p>
           <input 
             onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setName(e.target.value)} 
-            className="px-2 rounded-sm mb-8" 
+            className="px-2 rounded-sm mb-8 h-8 " 
             name="name" 
             placeholder="Nombre" 
           />
@@ -37,8 +37,8 @@ const Contact: React.FC = () => {
           />
         </div>
         <div className="self-center my-4">
-          <div className="overflow-y-scroll py-2 w-80 h-80 rounded-sm chat">
-            <p className="text-ellipsis overflow-hidden justify-self-end px-4 py-2 ml-8 my-4 mr-4 rounded-md bg-green-200 text-sm font-medium text-gray-800 drop-shadow-md">
+          <div className="overflow-y-auto py-2 w-80 h-40 md:h-80 rounded-sm chat">
+            <p className="text-ellipsis justify-self-end px-4 py-2 ml-8 my-4 mr-4 rounded-md bg-green-200 text-sm font-medium text-gray-800 drop-shadow-md">
               {message}
             </p>
           </div>

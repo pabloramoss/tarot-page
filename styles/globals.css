@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -22,9 +23,23 @@ a {
   background-image: url("/whatsappBackground.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+#svg-parent {
+  height: 100px;
+  overflow: hidden;
+}
+
+.footer {
+  height: 100%; 
+  width: 100%;
+}
+#path {
+  stroke: none; 
+  fill: #334155;
 }

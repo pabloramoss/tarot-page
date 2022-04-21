@@ -4,23 +4,30 @@ import Link from "next/link"
 const Hero: React.FC = () => {
   
   return (
-    <footer className="bg-slate-700 flex flex-col items-center">
-      <div className="flex mt-8 text-slate-500">
-        <a href="https://instagram.com" className="hover:text-white cursor-pointer mx-2">
-          <FaInstagram size="24" />
-        </a>
-        <a href="https://facebook.com" className="hover:text-white cursor-pointer mx-2">
-          <FaFacebook size="24" />
-        </a>
-        <a href="https://tiktok.com" className="hover:text-white cursor-pointer mx-2">
-          <FaTiktok size="24" />
-        </a>
+    <footer>
+      <div id="svg-parent">
+      <svg className="footer" viewBox="0 0 500 150" preserveAspectRatio="none">
+        <path id="path" d="M-0.27,103.13 C238.99,10.38 263.82,10.38 500.84,99.19 L500.00,150.00 L0.00,150.00 Z" />
+      </svg>
       </div>
-      <Link href="/">
-        <a>
-          <p className="text-lg font-semibold my-4 text-slate-500">Tzolkin Marce</p>
-        </a>
-      </Link>
+      <div className="bg-slate-700 items-center gap-4 flex flex-col">
+        <div className="flex text-slate-500">
+          <a href="https://instagram.com" className="hover:text-white cursor-pointer mx-2">
+            <FaInstagram size="24" />
+          </a>
+          <a href="https://facebook.com" className="hover:text-white cursor-pointer mx-2">
+            <FaFacebook size="24" />
+          </a>
+          <a href="https://tiktok.com" className="hover:text-white cursor-pointer mx-2">
+            <FaTiktok size="24" />
+          </a>
+        </div>
+        <Link href="/">
+          <a>
+            <p className="text-lg font-semibold mb-8 text-slate-500">Tzolkin Marce</p>
+          </a>
+        </Link>
+      </div>
     </footer>
   )
 }
