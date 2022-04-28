@@ -15,7 +15,7 @@ const Horoscope: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center pt-16">
-      <h4 className="text-4xl my-8 text-center text-slate-300">DESCUBRE TU FIRMA GALACTICA</h4>
+      <h4 className="text-2xl md:text-4xl my-8 text-center text-slate-300">DESCUBRE TU FIRMA GALÁCTICA</h4>
       <div className="h-[200px] w-[200px]">
         <Image src="/maya-Rad.gif" height={200} width={200} alt="maya rad" />
       </div>
@@ -32,7 +32,7 @@ const Horoscope: React.FC = () => {
         />
       </div>
       <a href={url}>
-        <button className="bg-slate-300 px-8 py-1 rounded-md font-semibold">Calcular</button>
+        <button className="bg-slate-300 px-8 py-1 rounded-md font-semibold hover:bg-slate-400">Calcular</button>
       </a>
     </div>
   )

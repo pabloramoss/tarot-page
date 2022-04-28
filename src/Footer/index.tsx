@@ -11,7 +11,12 @@ const Hero: React.FC = () => {
       </svg>
       </div>
       <div className="bg-slate-700 items-center gap-4 flex flex-col">
-        <div className="flex text-slate-500">
+        <Link href="/">
+          <a>
+            <p className="text-lg font-semibold text-slate-500">Tzolkin Marce</p>
+          </a>
+        </Link>
+        <div className="flex text-slate-500 mb-10">
           <a href="https://instagram.com" className="hover:text-white cursor-pointer mx-2">
             <FaInstagram size="24" />
           </a>
@@ -22,11 +27,6 @@ const Hero: React.FC = () => {
             <FaTiktok size="24" />
           </a>
         </div>
-        <Link href="/">
-          <a>
-            <p className="text-lg font-semibold mb-8 text-slate-500">Tzolkin Marce</p>
-          </a>
-        </Link>
       </div>
     </footer>
   )
