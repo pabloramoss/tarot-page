@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
         </div>
         <div className="self-center my-4">
           <div className="overflow-y-auto py-2 w-80 h-40 md:h-80 rounded-md chat">
-            <p className="text-ellipsis justify-self-end px-4 py-2 ml-8 my-4 mr-4 rounded-md bg-green-200 text-sm font-medium text-gray-800 drop-shadow-md">
+            <p className="text-ellipsis justify-self-end px-4 py-2 ml-8 my-4 mr-4 rounded-md bg-green-300 text-sm font-medium text-gray-800 drop-shadow-md">
               {message}
             </p>
           </div>

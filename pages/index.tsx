@@ -11,6 +11,7 @@ import dbConnect from "../lib/dbConnect"
 import Herodb from "../models/Herodb"
 import Servicesdb from '../models/Servicesdb'
 import Horoscope from '../src/Horoscope'
+
 interface Props {
   heroInfo: HeroInfo;
   services: ServiceInfo[];
@@ -39,7 +40,7 @@ const Home: NextPage<Props> = ({ heroInfo, services }) => {
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
-  await dbConnect()
+  /* await dbConnect() */
 
    /* find all the data in our database */
 /*   const result = await Herodb.find({})
@@ -48,22 +49,22 @@ export const getStaticProps: GetStaticProps = async () => {
     hero._id = hero._id.toString()
     return hero
   }) */
-  const result = await Servicesdb.find({})
+/*   const result = await Servicesdb.find({})
   const services = result.map((doc) => {
     const service = doc.toObject()
     service._id = service._id.toString()
     return service
-  })
+  }) */
   const heroInfo = {
-    title: "horoscopo maya",
+    title: "Calendario Maya",
     image: "https://www.aliciagalvan.com/wp-content/uploads/2019/05/su_signo_segun_el_horoscopo_maya_1_joya_life-1600x400.jpg"
   }
 
   return {
     props: {
       heroInfo,
-      services,
-    },
+/*       services,
+ */    },
   };
 };
 

@@ -17,13 +17,13 @@ const Hero: React.FC = () => {
           </a>
         </Link>
         <div className="flex text-slate-500 mb-10">
-          <a href="https://instagram.com" className="hover:text-white cursor-pointer mx-2">
+          <a href="https://instagram.com/marceuaxac" className="hover:text-white cursor-pointer mx-2">
             <FaInstagram size="24" />
           </a>
-          <a href="https://facebook.com" className="hover:text-white cursor-pointer mx-2">
+          <a href="https://facebook.com/marceuaxac" className="hover:text-white cursor-pointer mx-2">
             <FaFacebook size="24" />
           </a>
-          <a href="https://tiktok.com" className="hover:text-white cursor-pointer mx-2">
+          <a href="https://www.tiktok.com/@tzolkinmarce" className="hover:text-white cursor-pointer mx-2">
             <FaTiktok size="24" />
           </a>
         </div>
