@@ -9,7 +9,6 @@ const Services: React.FC = () => {
       <div className="flex flex-col items-center justify-center sm:flex-row sm:gap-4 sm:flex-wrap">
         {services.map((item)=> <Card key={item.title} serviceName={item.title} image={item.image}/>)}
       </div>
-
     </div>
   )
 }

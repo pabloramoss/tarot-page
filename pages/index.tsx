@@ -11,15 +11,26 @@ import dbConnect from "../lib/dbConnect"
 import Herodb from "../models/Herodb"
 import Servicesdb from '../models/Servicesdb'
 import Horoscope from '../src/Horoscope'
-
+import { createClient } from "@supabase/supabase-js"
+import Post from '../src/Post'
+import NavbarTest from '../src/Navbar/NavbarTest'
 interface Props {
   heroInfo: HeroInfo;
   services: ServiceInfo[];
+  post: IPost[];
   }
 
-const Home: NextPage<Props> = ({ heroInfo, services }) => {
+interface IPost {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const Home: NextPage<Props> = ({ heroInfo, services, post }) => {
   console.log("Este es el hero info",heroInfo)
   console.log("Este es el services",services)
+  console.log("Este es el post",post)
   
   return (
     <div className="bg-slate-900">
@@ -29,8 +40,10 @@ const Home: NextPage<Props> = ({ heroInfo, services }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <Navbar />
-        <Hero title={heroInfo.title} image_url={heroInfo.image} />
+        <NavbarTest />
+{/*         <Navbar />
+        <Hero title={heroInfo.title} image_url={heroInfo.image} /> */}
+          {post.map((item:IPost)=> <Post key={item.id} title={item.title} description={item.description} image={item.image} />)}
         <Horoscope />
         <Services />
         <Contact />
@@ -40,6 +53,14 @@ const Home: NextPage<Props> = ({ heroInfo, services }) => {
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
+  const supabaseAdmin = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+    process.env.SUPABASE_SERVICE_ROLE_KEY || ""
+  )
+
+  const { data } = await supabaseAdmin
+  .from("Post")
+  .select("*")
   /* await dbConnect() */
 
    /* find all the data in our database */
@@ -63,6 +84,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       heroInfo,
+      post: data,
 /*       services,
  */    },
   };
