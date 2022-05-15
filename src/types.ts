@@ -1,12 +1,13 @@
 
-interface HeroInfo {
-  title: string;
-  image: string;
+interface IPost {
+  titulo: string;
+  imagen: string;
+  texto: string;
 }
 
-interface ServiceInfo {
-  service: string;
-  image: string;
+interface IServices {
+  servicios: string;
 }
 
-export type { HeroInfo, ServiceInfo }
+
+export type { IPost, IServices }

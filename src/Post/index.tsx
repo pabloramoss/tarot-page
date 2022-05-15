@@ -8,7 +8,7 @@ interface Props {
 
 const Post: React.FC<Props> = ({ title, description, image })=> {
   return(
-    <aside className="relative overflow-hidden text-gray-300 bg-gray-900 lg:flex">
+    <aside className="max-w-7xl mx-auto relative overflow-hidden text-gray-300 lg:flex">
       <div className="w-full p-12 text-center lg:w-1/2 sm:p-16 lg:p-24 lg:text-left">
         <div className="max-w-xl mx-auto lg:ml-0">
           {/* <p className="text-sm font-medium">Lorem ipsum dolor sit amet.</p> */}
@@ -29,8 +29,8 @@ const Post: React.FC<Props> = ({ title, description, image })=> {
       </div>
       <div className="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-auto">
         <img
-          src="https://www.hyperui.dev/photos/women-2.jpeg"
-          alt="Women smiling at college"
+          src={image}
+          alt={title}
           className="absolute inset-0 object-cover w-full h-full"
         />
       </div>

@@ -1,25 +1,29 @@
-interface Props {
-  title: string;
-  image_url: string;
-}
-const Hero: React.FC<Props> = ({ title, image_url }) => {
+
+const Hero: React.FC = () => {
 
   return (
-    <aside className="bg-no-repeat bg-center bg-cover p-12 bg-[url('https://www.aliciagalvan.com/wp-content/uploads/2019/05/su_signo_segun_el_horoscopo_maya_1_joya_life-1600x400.jpg')] sm:p-16 lg:p-24">
-      <div className="max-w-xl mx-auto text-center">
-        <p className="text-sm font-medium text-gray-500">
-          Tzolkin Marce
-        </p>
-        <p className="mt-2 text-3xl font-bold sm:text-5xl text-white">
-          {title.toUpperCase()}
-        </p>
-        <div className="mt-8 sm:items-center sm:justify-center sm:flex">
-          <a href="#contacto" className="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded-md sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring">
+    <main className="hero kw-screen bg-center bg-cover p-12 bg-[url('https://www.aliciagalvan.com/wp-content/uploads/2019/05/su_signo_segun_el_horoscopo_maya_1_joya_life-1600x400.jpg')] mx-auto max-w-7xl px-4 sm:px-6  lg:px-8 ">
+    <div className="text-left">
+      <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+        <span className="block text-white xl:inline">Calendario</span>{' '}
+        <span className="block text-rose-400 xl:inline">Maya</span>
+      </h1>
+      <p className="mt-3 text-left text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+        fugiat veniam occaecat fugiat aliqua.
+      </p>
+      <div className="mt-5 sm:mt-8 justify-center sm:flex sm:justify-center lg:justify-start">
+        <div className="mt-3 sm:mt-0">
+          <a
+            href="#contacto"
+            className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+          >
             Contactame
           </a>
         </div>
       </div>
-    </aside>
+    </div>
+  </main>
   )
 }
 

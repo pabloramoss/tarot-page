@@ -14,8 +14,8 @@ const Horoscope: React.FC = () => {
   },[startDate])
 
   return (
-    <div className="flex flex-col items-center pt-16">
-      <h4 className="text-2xl md:text-4xl my-8 text-center text-slate-300">DESCUBRE TU FIRMA GALÁCTICA</h4>
+    <div className="flex flex-col items-center pt-10">
+      <h4 className="text-rose-400 text-2xl md:text-4xl my-8 text-center text-slate-300">DESCUBRE TU FIRMA GALÁCTICA</h4>
       <div className="h-[200px] w-[200px]">
         <Image src="/firmaGalactica.png" height={200} width={200} alt="firma galactica logo" />
       </div>
@@ -31,7 +31,7 @@ const Horoscope: React.FC = () => {
           className="border-2 rounded-md mb-4 text-center"
         />
       </div>
-      <a href={url}>
+      <a href={url} className="mb-20">
         <button className="bg-slate-300 px-8 py-1 rounded-md font-semibold hover:bg-slate-400">Calcular</button>
       </a>
     </div>

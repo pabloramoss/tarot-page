@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
 
   return (
     <div className="py-8 text-slate-300">
-      <h5 id="contacto" className="font-semibold text-2xl md:text-4xl mb-4 text-center">CONTACTAME</h5>
+      <h5 id="contacto" className="text-rose-400 font-semibold text-2xl md:text-4xl mb-4 text-center">CONTACTAME</h5>
       <div className="items-center gap-10 justify-center flex flex-col md:flex-row">
         <div className="pt-4 text-slate-500">
           <p className="mb-2">Nombre</p>
