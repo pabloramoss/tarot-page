@@ -1,34 +1,106 @@
-import { Client } from "@notionhq/client";
+import {Client} from "@notionhq/client";
+import {BlogPost, PostPage} from "../types";
+import {NotionToMarkdown} from "notion-to-md";
 
-const notion = new Client({
-  auth: process.env.NOTION_TOKEN,
-});
+export default class NotionService {
+    client: Client
+    n2m: NotionToMarkdown;
 
-export const getDatabase = async (databaseId: string) => {
-  const response = await notion.databases.query({
-    database_id: databaseId,
-  });
-  return response.results;
-};
-
-export const getPage = async (pageId: string) => {
-  const response = await notion.pages.retrieve({ page_id: pageId });
-  return response;
-};
-
-export const getBlocks = async (blockId: string) => {
-  const blocks = [];
-  let cursor;
-  while (true) {
-    const { results, next_cursor } = await notion.blocks.children.list({
-      start_cursor: cursor,
-      block_id: blockId,
-    });
-    blocks.push(...results);
-    if (!next_cursor) {
-      break;
+    constructor() {
+        this.client = new Client({ auth: process.env.NOTION_API_KEY });
+        this.n2m = new NotionToMarkdown({ notionClient: this.client });
     }
-    cursor = next_cursor;
-  }
-  return blocks;
-};
+
+    async getPublishedBlogPosts(): Promise<BlogPost[]> {
+        const database = process.env.NOTION_DATABASE_ID ?? '';
+        // list blog posts
+        const response = await this.client.databases.query({
+            database_id: database,
+            filter: {
+                property: 'Published',
+                checkbox: {
+                    equals: true
+                }
+            },
+            sorts: [
+                {
+                    property: 'Updated',
+                    direction: 'descending'
+                }
+            ]
+        });
+        console.log("NOTIOOOOOOOOOOON",response)
+
+        return response.results.map(res => {
+            return NotionService.pageToPostTransformer(res);
+        })
+    }
+
+    async getSingleBlogPost(slug: string): Promise<PostPage> {
+        let post, markdown
+
+        const database = process.env.NOTION_DATABASE_ID ?? '';
+        // list of blog posts
+        const response = await this.client.databases.query({
+          database_id: database,
+          filter: {
+            property: 'Slug',
+            formula: {
+              string: {
+                equals: slug // slug
+              }
+            },
+                // add option for tags in the future
+            },
+            sorts: [
+              {
+                property: 'Updated',
+                direction: 'descending'
+              }
+            ]
+        });
+
+        if (!response.results[0]) {
+            throw 'No results available'
+        }
+
+        // grab page from notion
+        const page = response.results[0];
+
+        const mdBlocks = await this.n2m.pageToMarkdown(page.id)
+        markdown = this.n2m.toMarkdownString(mdBlocks);
+        post = NotionService.pageToPostTransformer(page);
+
+        return {
+            post,
+            markdown
+        }
+    }
+
+    private static pageToPostTransformer(page: any): BlogPost {
+        let cover = page.cover;
+        console.log("esta es la page",page)
+        console.log(cover)
+        switch (cover.type) {
+            case 'file':
+                cover = page.cover.file
+                break;
+            case 'external':
+                cover = page.cover.external.url;
+                break;
+            default:
+                // Add default cover image if you want...
+                cover = 'https://via.placeholder.com/300'
+        }
+
+        return {
+            id: page.id,
+            cover: cover,
+            title: page.properties.Name.title[0].plain_text,
+            tags: page.properties.Tags.multi_select,
+            description: page.properties.Description.rich_text[0].plain_text,
+            date: page.properties.Updated.last_edited_time,
+            slug: page.properties.Slug.formula.string
+        }
+    }
+}

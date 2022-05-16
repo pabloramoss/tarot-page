@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
 import Contact from '../src/Contact'
 import Services from '../src/Services'
@@ -8,15 +8,12 @@ import Footer from '../src/Footer'
 import Horoscope from '../src/Horoscope'
 import fetchNotion from '../utils/fetchNotion'
 import Post from '../src/Post'
+import NotionService from '../utils/notion'
+import post from './post'
 
-interface Props {
-  post: any;
-}
-
-const Home: NextPage<Props> = ({ post }) => {
-  console.log(post)
-  console.log(post[0].properties)
-  
+const Home = ({posts}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(posts)
+  const post = posts[0]
   return (
     <div className="bg-slate-900">
       <Head>
@@ -28,7 +25,7 @@ const Home: NextPage<Props> = ({ post }) => {
         <Navbar />
         <Hero />
         <Horoscope />
-          <Post title={post[0].properties.Name.title[0].text.content} description={post[0].properties.Description.rich_text[0].plain_text} image={post[0].properties.Image.files[0].name} />
+          <Post title={post.title} description={post.description} image={post.cover.url} />
           {/* {post.map((item:IPost)=> <Post key={item.titulo} title={item.titulo} description={item.texto} image={item.imagen} />)} */}
         <Services />
         <Contact />
@@ -38,14 +35,14 @@ const Home: NextPage<Props> = ({ post }) => {
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetchNotion()
+  const notionService = new NotionService();
+  const posts = await notionService.getPublishedBlogPosts()
 
   return {
     props: {
-      post: response
+      posts
     },
-    revalidate: 60,
-  };
-};
+  }
+}
 
 export default Home

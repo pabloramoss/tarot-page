@@ -13,3 +13,16 @@ export default async function fetchNotion() {
   return response.results;
 }
 
+/* export function getPost() {
+  const response = await notion.databases.query({
+    database_id: NOTION_DATABASE_ID,
+    filter: {
+      property: "Slug",
+      formula: {
+        text: {
+          equals: slug,
+        }
+      }
+    }
+  })
+} */
