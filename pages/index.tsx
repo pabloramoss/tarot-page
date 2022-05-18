@@ -1,4 +1,4 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Contact from '../src/Contact'
 import Services from '../src/Services'
@@ -6,10 +6,8 @@ import Hero from '../src/Hero'
 import Navbar from '../src/Navbar'
 import Footer from '../src/Footer'
 import Horoscope from '../src/Horoscope'
-import fetchNotion from '../utils/fetchNotion'
 import Post from '../src/Post'
 import NotionService from '../utils/notion'
-import post from './post'
 
 const Home = ({posts}: InferGetStaticPropsType<typeof getStaticProps>) => {
   console.log(posts)

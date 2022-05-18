@@ -54,19 +54,35 @@ html {
 .hero {
   box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
 }
-/* 
-h1 {
+
+.reactMarkDown h1 {
   font-size: xx-large;
+  font-weight: 700;
 }
 
-h2 {
+.reactMarkDown h2 {
   font-size: x-large;
+  font-weight: 700;
 }
 
-h3 {
+.reactMarkDown h3 {
   font-size: large;
+  font-weight: 600;
 }
 
-h4 {
+.reactMarkDown h4 {
   font-size: medium;
-} */
+  font-weight: 600;
+}
+
+.reactMarkDown ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  list-style: disc outside none;
+}
+
+.reactMarkDown ul li {
+  margin-left: 2em;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
