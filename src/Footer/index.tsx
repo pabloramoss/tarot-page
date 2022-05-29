@@ -1,8 +1,7 @@
-import { FaTiktok, FaInstagram, FaFacebook } from "react-icons/fa"
-import Link from "next/link"
+import {FaTiktok, FaInstagram, FaFacebook} from "react-icons/fa";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
-  
   return (
     <footer className="bg-slate-800 items-center gap-4 flex flex-col py-5">
       <Link href="/">
@@ -11,18 +10,21 @@ const Hero: React.FC = () => {
         </a>
       </Link>
       <div className="flex text-slate-500">
-        <a href="https://instagram.com/marceuaxac" className="hover:text-white cursor-pointer mx-2">
+        <a className="hover:text-white cursor-pointer mx-2" href="https://instagram.com/marceuaxac">
           <FaInstagram size="24" />
         </a>
-        <a href="https://facebook.com/marceuaxac" className="hover:text-white cursor-pointer mx-2">
+        <a className="hover:text-white cursor-pointer mx-2" href="https://facebook.com/marceuaxac">
           <FaFacebook size="24" />
         </a>
-        <a href="https://www.tiktok.com/@tzolkinmarce" className="hover:text-white cursor-pointer mx-2">
+        <a
+          className="hover:text-white cursor-pointer mx-2"
+          href="https://www.tiktok.com/@tzolkinmarce"
+        >
           <FaTiktok size="24" />
         </a>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

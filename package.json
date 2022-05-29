@@ -31,10 +31,21 @@
     "@types/react-datepicker": "^4.4.0",
     "@types/react-dom": "18.0.0",
     "autoprefixer": "^10.4.4",
-    "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
-    "typescript": "4.6.3"
+    "typescript": "4.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.16.0",
+    "eslint-config-next": "^12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "prettier": "^2.6.2"
   }
 }

@@ -1,4 +1,3 @@
-
 interface IPost {
   titulo: string;
   imagen: string;
@@ -9,5 +8,4 @@ interface IServices {
   servicios: string;
 }
 
-
-export type { IPost, IServices }
+export type {IPost, IServices};
