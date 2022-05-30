@@ -30,7 +30,7 @@ const Post = ({markdown, post}: InferGetStaticPropsType<typeof getStaticProps>) 
             </button>
           </a>
         </Link>
-        <img className="self-center" height={500} src={post.cover.url} width={500} />
+        <img className="my-10 self-center w-7xl" src={post.cover.url} />
         <main className="max-w-5xl mx-auto relative">
           <div className="flex items-center justify-center">
             <article>

@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
         <div className="mt-5 sm:mt-8 justify-center sm:flex justify-center">
           <div className="flex mt-3 sm:mt-0">
             <a
-              className="bg-rose-400 shadow-lg shadow-rose-400/30 w-full px-8 py-3 text-center border border-transparent text-base font-medium rounded-md text-white hover:bg-rose-300 md:py-4 md:text-lg md:px-10"
+              className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 bg-rose-400 shadow-lg shadow-rose-400/30 w-full px-8 py-3 text-center border border-transparent text-base font-medium rounded-md text-white hover:bg-rose-300 md:py-4 md:text-lg md:px-10"
               href="#contacto"
             >
               Contactame

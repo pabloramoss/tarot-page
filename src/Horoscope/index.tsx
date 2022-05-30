@@ -25,7 +25,7 @@ const Horoscope: React.FC = () => {
       <div className="h-[200px] w-[200px]">
         <Image alt="firma galactica logo" height={200} src="/firmaGalactica.png" width={200} />
       </div>
-      <p className="text-md my-4 text-slate-300">Ingresá tu fecha de nacimiento</p>
+      <p className="text-lg my-4 text-slate-300">Ingresá tu fecha de nacimiento</p>
       <div className="justify-self-center">
         <DatePicker
           peekNextMonth
