@@ -9,8 +9,6 @@ import Navbar from "../src/Navbar";
 import Footer from "../src/Footer";
 
 const Post = ({markdown, post}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(markdown);
-
   return (
     <>
       <Head>

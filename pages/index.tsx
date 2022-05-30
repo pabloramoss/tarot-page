@@ -12,7 +12,6 @@ import Post from "../src/Post";
 import NotionService from "../utils/notion";
 
 const Home = ({posts}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(posts);
   const post = posts[0];
 
   return (

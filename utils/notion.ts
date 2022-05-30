@@ -31,8 +31,6 @@ export default class NotionService {
       ],
     });
 
-    console.log("NOTIOOOOOOOOOOON", response);
-
     return response.results.map((res) => {
       return NotionService.pageToPostTransformer(res);
     });
@@ -83,8 +81,6 @@ export default class NotionService {
   private static pageToPostTransformer(page: any): BlogPost {
     let cover = page.cover;
 
-    console.log("esta es la page", page);
-    console.log(cover);
     switch (cover.type) {
       case "file":
         cover = page.cover.file;
