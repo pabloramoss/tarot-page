@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
             placeholder="Mensaje"
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)}
           />
-          <Link href={`https://wa.me/1414141?text=${encodeURIComponent(message)}`}>
+          <Link href={`https://wa.me/+5493424432918?text=${encodeURIComponent(message)}`}>
             <a>
               <button className="bg-green-400 text-black font-semibold flex items-center px-4 py-3 rounded-md w-full justify-center my-4 hover:bg-green-500">
                 <FaWhatsapp className="mr-2" size="20" />

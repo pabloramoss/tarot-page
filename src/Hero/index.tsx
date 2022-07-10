@@ -4,12 +4,13 @@ const Hero: React.FC = () => {
       <div className="mt-20">
         <p className="font-bold mb-4 text-rose-400 text-center text-xl sm:hidden">Tzolkin Marce</p>
         <h1 className="text-5xl md:text-4xl text-center tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-          <span className="block text-white xl:inline">Calendario</span>{" "}
+          <span className="block text-white xl:inline">Tzolkin</span>{" "}
           <span className="block text-rose-400 xl:inline">Maya</span>
         </h1>
         <p className="mt-3 text-left text-gray-200 sm:mt-5 sm:text-lg md:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-          Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+          El pueblo Maya, desarrolló más de 17 calendarios, basados en los movimientos planetarios,
+          estelares y sus referencias con nuestro planeta Tierra. Tzolkin, significa “la cuenta de
+          los días”.
         </p>
         <div className="mt-5 sm:mt-8 justify-center sm:flex justify-center">
           <div className="flex mt-3 sm:mt-0">
