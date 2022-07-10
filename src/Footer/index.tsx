@@ -10,18 +10,28 @@ const Hero: React.FC = () => {
         </a>
       </Link>
       <div className="flex text-slate-500">
-        <a className="hover:text-white cursor-pointer mx-2" href="https://instagram.com/marceuaxac">
+        <a
+          className="hover:text-white cursor-pointer mx-2"
+          href="https://instagram.com/marceuaxac"
+          rel="noreferrer"
+          target="_blank"
+        >
           <FaInstagram size="24" />
         </a>
-        <a className="hover:text-white cursor-pointer mx-2" href="https://facebook.com/marceuaxac">
+        <a
+          className="hover:text-white cursor-pointer mx-2"
+          href="https://facebook.com/marceuaxac"
+          rel="noreferrer"
+          target="_blank"
+        >
           <FaFacebook size="24" />
         </a>
-        <a
+        {/* <a
           className="hover:text-white cursor-pointer mx-2"
           href="https://www.tiktok.com/@tzolkinmarce"
         >
           <FaTiktok size="24" />
-        </a>
+        </a> */}
       </div>
     </footer>
   );

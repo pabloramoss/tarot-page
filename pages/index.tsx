@@ -19,7 +19,7 @@ const Home = ({posts}: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Head>
         <title>Tzolkin Marce</title>
         <meta content="Tzolkin Marce Tarot" name="Tarot" />
-        <link href="/favicon.ico" rel="icon" />
+        <link href="/favicon-32x32.png" rel="icon" />
       </Head>
       <main className="">
         <Navbar />
