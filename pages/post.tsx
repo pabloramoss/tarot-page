@@ -13,7 +13,7 @@ const Post = ({markdown, post}: InferGetStaticPropsType<typeof getStaticProps>) 
     <>
       <Head>
         <title>{post.title}</title>
-        <meta content={post.description} name={"description"} title={"description"} />
+        <meta content={post?.description} name={"description"} title={"description"} />
         <meta content={post.title} name={"og:title"} title={"og:title"} />
         <meta content={post.description} name={"og:description"} title={"og:description"} />
         <meta content={post.cover} name={"og:image"} title={"og:image"} />
