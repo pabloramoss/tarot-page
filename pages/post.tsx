@@ -59,6 +59,7 @@ export const getStaticProps: GetStaticProps = async () => {
       markdown: p.markdown,
       post: p.post,
     },
+    revalidate: 60,
   };
 };
 
