@@ -8,9 +8,9 @@ const Horoscope: React.FC = () => {
   const [url, setUrl] = useState<string>("");
 
   useEffect(() => {
-    const day = startDate.toISOString().split("T")[0].split("-")[2];
-    const month = startDate.toISOString().split("T")[0].split("-")[1];
-    const year = startDate.toISOString().split("T")[0].split("-")[0];
+    const day = startDate.getDate();
+    const month = startDate.getMonth() + 1;
+    const year = startDate.getFullYear();
 
     setUrl(
       `https://13lunas.net/firmaGalacticaBasica.html?nombre=Hoy&dia=${day}&mes=${month}&ano=${year}&x=72&y=26`,
@@ -32,6 +32,7 @@ const Horoscope: React.FC = () => {
           showMonthDropdown
           showYearDropdown
           className="border-2 rounded-md mb-4 text-lg font-semibold text-center py-2"
+          dateFormat="dd/MM/yyyy"
           dropdownMode="select"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
